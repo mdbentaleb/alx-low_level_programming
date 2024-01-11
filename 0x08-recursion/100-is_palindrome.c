@@ -40,7 +40,7 @@ return (len);
 
 int is_palindrome_recursive(char *s, int i, int j)
 {
-if (i == j)
+if (i >= j)
 {
 return (1);
 }
