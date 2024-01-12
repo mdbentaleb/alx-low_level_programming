@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -9,12 +10,12 @@
 
 int main(int arc, char **arv)
 {
-	int sum;
+	int mul;
 
 	if (arc == 3)
 	{
-		sum = atoi(arv[1]) * atoi(arv[2]);
-		printf("%d\n", sum);
+		mul = atoi(arv[1]) * atoi(arv[2]);
+		printf("%d\n", mul);
 	}
 	else
 	{
@@ -23,4 +24,3 @@ int main(int arc, char **arv)
 	}
 	return (0);
 }
-
