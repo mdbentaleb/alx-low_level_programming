@@ -18,7 +18,7 @@ int main(int arc, char **arv)
 	}
 	else
 	{
-		printf("Eroor\n");
+		printf("Error\n");
 		return (1);
 	}
 	return (0);
