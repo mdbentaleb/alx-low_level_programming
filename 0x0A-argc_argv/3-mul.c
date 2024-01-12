@@ -14,13 +14,13 @@ int main(int arc, char **arv)
 	if (arc == 3)
 	{
 		sum = atoi(arv[1]) * atoi(arv[2]);
-		printf("%d", sum);
+		printf("%d\n", sum);
 	}
 	else
 	{
-		printf("Eroor");
+		printf("Eroor\n");
+		return (1);
 	}
-	printf("\n");
 	return (0);
 }
 
