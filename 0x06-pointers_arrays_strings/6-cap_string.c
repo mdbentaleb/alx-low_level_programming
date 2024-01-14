@@ -28,14 +28,10 @@ int word_separator(char c)
 
 char *cap_string(char *str)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
-	}
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -45,8 +41,6 @@ char *cap_string(char *str)
 		}
 		i++;
 	}
-	if  (str[0] >= 'a' && str[0] <= 'z')
-		str[0] -= 32;
 	return (str);
 }
 
