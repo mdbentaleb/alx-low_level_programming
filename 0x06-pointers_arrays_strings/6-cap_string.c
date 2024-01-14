@@ -10,6 +10,7 @@ int word_separator(char c)
 {
 	int i = 0;
 	char sprtr[] = " \t\n,;.!?\"(){}";
+
 	while (sprtr[i] != '\0')
 	{
 		if (c == sprtr[i])
@@ -44,7 +45,8 @@ char *cap_string(char *str)
 		}
 		i++;
 	}
-	str[0] -= 32;
+	if  (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
 	return (str);
 }
 
