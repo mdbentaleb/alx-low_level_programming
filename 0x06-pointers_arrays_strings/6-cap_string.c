@@ -32,13 +32,6 @@ char *cap_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
-	}
-	i = 0;
-	while (str[i] != '\0')
-	{
 		if ((str[i] >= 'a' && str[i] <= 'z') && word_separator(str[i - 1]) == 1)
 		{
 			str[i] -= 32;
