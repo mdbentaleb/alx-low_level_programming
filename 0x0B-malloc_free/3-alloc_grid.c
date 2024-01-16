@@ -34,6 +34,7 @@ int **alloc_grid(int width, int height)
 		while (j < width)
 		{
 			table[i][j] = 0;
+			j++;
 		}
 	}
 	return (0);
