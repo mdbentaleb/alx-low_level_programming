@@ -28,7 +28,7 @@ int ft_strlen(char *str)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int i, len1, len2;
+	unsigned int i, len1, len2, j;
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
@@ -47,17 +47,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 
-
-	for (i = 0; s1[i] != '\0'; i++)
+	i = 0;
+	while (i < len1)
 	{
 		str[i] = s1[i];
+		i++;
 	}
 
-
-	for (int j = 0; j < n; j++)
+	j = 0;
+	while (j < n)
 	{
 		str[i] = s2[j];
 		i++;
+		j++;
 	}
 
 	str[i] = '\0';
