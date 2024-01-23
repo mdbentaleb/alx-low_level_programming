@@ -24,11 +24,8 @@ int ft_strlen(const char *str)
  */
 
 char *ft_strcpy(char *dest, char *src)
-{
-	int src_len = ft_strlen(src);
-	int i;
 
-	for (i = 0; i < src_len; i++)
+	for (int i = 0; src[i]; i++)
 		dest[i] = src[i];
 	dest[i] = '\0';
 	return (dest);
@@ -45,30 +42,34 @@ char *ft_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dg;
+	dog_t *dog;
 
 	if (!name || age < 0 || !owner)
 		return (NULL);
-	dg = (dog_t *)malloc(sizeof(dog_t));
+
+	dog = (dog_t *)malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
-	dg->name = malloc(sizeof(char) * (ft_strlen(name) + 1));
-	if ((*dg).name == NULL)
+
+	dog->name = malloc(sizeof(char) * (ft_strlen(name) + 1));
+	if ((*dog).name == NULL)
 	{
-		free(dg);
+		free(dog);
 		return (NULL);
 	}
-	dg->owner = malloc(sizeof(char) * (ft_strlen(owner) + 1));
-	if ((*dg).owner == NULL)
+
+	dog->owner = malloc(sizeof(char) * (ft_strlen(owner) + 1));
+	if ((*dog).owner == NULL)
 	{
-		free(dg->name);
-		free(dg);
+		free(dog->name);
+		free(dog);
 		return (NULL);
 	}
-	dg->name = ft_strcpy(dg->name, name);
-	dg->age = age;
-	dg->owner = ft_strcpy(dg->owner, owner);
-	return (dg);
+
+	dog->name = ft_strcpy(dog->name, name);
+	dog->age = age;
+	dog->owner = ft_strcpy(dog->owner, owner);
+	return (dog);
 
 }
 
