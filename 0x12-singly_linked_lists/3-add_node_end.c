@@ -24,7 +24,7 @@ int ft_strlen(char *str)
 *
 * Return: the address of the new element, or NULL if it failed
 */
-list_t *add_node_end(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new = malloc(sizeof(list_t));
 	list_t *node = *head;
@@ -45,10 +45,11 @@ list_t *add_node_end(list_t **head, const char *str);
 	{
 		while (node->next)
 			node = node->next;
-		node->next = new_node;
+		node->next = new;
 	}
 	else
-		*head = new_node;
-	return (*new_node);
+		*head = new;
+
+	return (new);
 }
 
