@@ -8,14 +8,32 @@
 
 int main(void)
 {
-	long nbr, i;
+	long int nbr;
+	long int max;
+	long int i;
 
 	nbr = 612852475143;
-	for (i = 2; i < nbr; i++)
+	max = -1;
+
+	while (nbr % 2 == 0)
 	{
-		while (n % i == 0)
-			nbr = nbr / i;
+		max = 2;
+		nbr /= 2;
 	}
-	printf("%lu\n", nbr);
+
+	for (i = 3; i <= sqrt(nbr); i = i + 2)
+	{
+		while (nbr % i == 0)
+		{
+			max = i;
+			nbr = nbr / i;
+		}
+	}
+
+	if (nbr > 2)
+		max = nbr;
+
+	printf("%ld\n", max);
+
 	return (0);
 }
