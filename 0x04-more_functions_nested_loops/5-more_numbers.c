@@ -6,7 +6,7 @@
  *
  * Return: always 0
  */
-void print_numbers(void)
+void more_numbers(void)
 {
 	int N, Row, Count;
 
@@ -25,3 +25,4 @@ void print_numbers(void)
 		_putchar('\n');
 	}
 }
+
